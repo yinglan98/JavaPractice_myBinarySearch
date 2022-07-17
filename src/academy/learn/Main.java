@@ -6,6 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
         // Test myBinarySearch
+        // TODO: Come up with a way to refactor the test cases
         testMyBinarySearch();
         testMyBinarySearchGeneric();
     }
@@ -49,5 +50,12 @@ public class Main {
         assert(myBinarySearchGeneric.binarySearch(linkedListThreeElements, 3) == 2);
         assert(myBinarySearchGeneric.binarySearch(linkedListThreeElements, 4) == 3);
         assert(myBinarySearchGeneric.binarySearch(linkedListThreeElements, 5) == -1);
+
+        // Search for a specific seat
+        List<Seat> listOfSeats = new ArrayList<>();
+        listOfSeats.add(new Seat("1A"));
+        listOfSeats.add(new Seat("1B"));
+        listOfSeats.add(new Seat("1C"));
+        assert(myBinarySearchGeneric.binarySearch(listOfSeats, new Seat("1C")) == 2);
     }
 }
